@@ -89,6 +89,10 @@ app.use("/api/v1/income", incomeRoutes);
 app.use("/api/v1/expense", expenseRoutes);
 app.use("/api/v1/dashboard", dashboardRoutes);
 
+app.get("/api/test", (req, res) => {
+  res.json({ message: "Backend is working!" });
+});
+
 // Note: Local uploads folder removed - now using Cloudinary for image storage
 
 const PORT = process.env.PORT || 5000;

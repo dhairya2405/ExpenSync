@@ -1,38 +1,9 @@
 {
     "version": 2,
     "builds": [
-      {
-        "src": "server.js",
-        "use": "@vercel/node",
-        "config": {
-          "includeFiles": [
-            "**/*"
-          ]
-        }
-      }
+      { "src": "server.js", "use": "@vercel/node" }
     ],
-    "headers": [
-      {
-        "source": "/api/(.*)",
-        "headers": [
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "https://expen-sync.vercel.app"
-          },
-          {
-            "key": "Access-Control-Allow-Methods",
-            "value": "GET, POST, PUT, DELETE, OPTIONS, PATCH"
-          },
-          {
-            "key": "Access-Control-Allow-Headers",
-            "value": "Content-Type, Authorization, X-Requested-With, Accept, Origin"
-          },
-          {
-            "key": "Access-Control-Allow-Credentials",
-            "value": "true"
-          }
-        ]
-      }
+    "routes": [
+      { "src": "/(.*)", "dest": "/server.js" }
     ]
   }
-  
