@@ -1,5 +1,5 @@
 
-export const BASE_URL = "http://localhost:8000";
+export const BASE_URL = "https://expen-sync-server-j0ow04zxm-gandhidhairya2405-2727s-projects.vercel.app";
 
 export const API_PATHS = {
     AUTH: {
