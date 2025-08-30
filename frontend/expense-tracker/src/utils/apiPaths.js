@@ -21,6 +21,7 @@ export const API_PATHS = {
         GET_ALL_EXPENSE: "/api/v1/expense/get",
         DELETE_EXPENSE: (expenseId) => `/api/v1/expense/${expenseId}`,
         DOWNLOAD_EXPENSE: "/api/v1/expense/downloadexcel",
+        GENERATE_RECURRING: "/api/v1/expense/generate-recurring",
     },
     IMAGE: {
         UPLOAD_IMAGE: "/api/v1/auth/upload-image",

@@ -11,13 +11,13 @@ const FinanceOverview = ({ totalBalance, totalIncome, totalExpense }) => {
     return (
         <div className="card">
             <div className="flex items-center justify-between">
-                <h5 className="text-lg font-semibold text-gray-800">Financial Overview</h5>
+                <h5 className="text-lg font-semibold text-gray-800">Financial Overview Charts</h5>
             </div>
 
             <CustomPieChart
                 data={balanceData}
                 label="Total Balance"
-                totalAmount={`$${totalBalance}`}
+                totalAmount={`₹${totalBalance}`}
                 colors={COLORS}
                 showTextAnchor
             />

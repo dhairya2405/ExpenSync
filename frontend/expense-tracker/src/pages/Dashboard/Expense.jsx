@@ -39,6 +39,7 @@ const Expense = () => {
         }
     }
 
+
     // Add new expense
     const handleAddExpense = async (expense) => {
         const { category, amount, date, icon } = expense
@@ -134,6 +135,19 @@ const Expense = () => {
         return () => { };
     }, [])
 
+    // Ensure recurring expenses for the current month exist
+    useEffect(() => {
+        const ensureRecurring = async () => {
+            try {
+                await axiosInstance.post(API_PATHS.EXPENSE.GENERATE_RECURRING)
+                fetchExpenseDetails()
+            } catch (err) {
+                // silent fail
+            }
+        }
+        ensureRecurring()
+    }, [])
+
     return (
         <DashboardLayout activeMenu="Expense">
             <div className="my-5 mx-auto">
@@ -157,6 +171,7 @@ const Expense = () => {
                 >
                     <AddExpenseForm onAddExpense={handleAddExpense} />
                 </Modal>
+
 
                 <Modal
                     isOpen={openDeleteAlert.show}

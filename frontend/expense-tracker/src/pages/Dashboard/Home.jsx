@@ -15,6 +15,7 @@ import ExpenseTransactions from '../../components/Dashboard/ExpenseTransactions'
 import Last30DaysExpenses from '../../components/Dashboard/Last30DaysExpenses'
 import RecentIncomeWithChart from '../../components/Dashboard/RecentIncomeWithChart'
 import RecentIncome from '../../components/Dashboard/RecentIncome'
+ 
 
 
 
@@ -96,10 +97,11 @@ const Home = () => {
 
                     <IncomeOverview
                         totalIncome={dashboardData?.totalIncome || 0}
+                        incomeTransactions={dashboardData?.recentTransactions?.filter((t) => t.type === 'income') || []}
                     />
 
                     <RecentIncome
-                        transactions={dashboardData?.recentTransactions || []}
+                        transactions={dashboardData?.recentTransactions?.filter((t) => t.type === 'income') || []}
                         onSeeMore={() => navigate('/income')}
                     />
                 </div>
