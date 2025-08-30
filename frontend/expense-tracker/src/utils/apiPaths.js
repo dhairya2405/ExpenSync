@@ -1,5 +1,6 @@
 
-export const BASE_URL = "https://expen-sync-server-j0ow04zxm-gandhidhairya2405-2727s-projects.vercel.app";
+// Use environment variable for production or fallback to development URL
+export const BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://expen-sync-server-j0ow04zxm-gandhidhairya2405-2727s-projects.vercel.app";
 
 export const API_PATHS = {
     AUTH: {
